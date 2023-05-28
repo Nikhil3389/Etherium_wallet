@@ -5,7 +5,11 @@
         <h2> Wallet balance:</h2>
         <p>{{ balance }} ETH</p>
 
-        <h2> Recent transactions:</h2>
+       
+        <h2>Ethereum address:</h2>
+        <p>{{ wallet_address }}</p>
+         <h2> Recent transactions:</h2>
+        
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -29,8 +33,6 @@
             </table>
         </div>
 
-        <h2>Ethereum address:</h2>
-        <p>{{ wallet_address }}</p>
     </div>
 {% endblock %}
 
