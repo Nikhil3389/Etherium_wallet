@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2> Wallet balance:</h2>
+        <p>{{ balance }} ETH</p>
+
+        <h2> Recent transactions:</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Transaction Hash</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tx in transactions %}
+                    <tr>
+                        <td>{{ tx.hash }}</td>
+                        <td>{{ tx.from }}</td>
+                        <td>{{ tx.to }}</td>
+                        <td>{{ tx.value }} ETH</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Ethereum address:</h2>
+        <p>{{ wallet_address }}</p>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <style>
+        body {
+             background-color: #aeaeae;
+            font-family: Arial, sans-serif;
+            background-color: grey; /* Added inline background color */
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 800px;
+            padding: 20px;
+            background-color: #d9e3f0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center-align the text */
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% endblock %}
