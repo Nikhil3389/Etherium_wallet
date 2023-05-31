@@ -1,0 +1,10 @@
+runtime: python39
+
+handlers:
+- url: /static
+  static_dir: core/static
+- url: /.*
+  script: auto
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'eth_balance.settings'

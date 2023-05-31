@@ -8,9 +8,7 @@ max_requests = 1000
 max_requests_jitter = 50
 preload_app = True
 daemon = True
-module_name = "eth_balance.wsgi"
-
-# Log configuration
+module_name = "eth-balance.wsgi"
 accesslog = "-"
 errorlog = "-"
 loglevel = "info"
